@@ -1,9 +1,8 @@
 package modele;
 
-import java.util.Calendar;
 import java.util.Scanner;
 
-public class Date{
+public class Date implements Comparable<Date> {
 
     protected int chJour;
     protected int chMois;
@@ -120,8 +119,6 @@ public class Date{
         Date veille = new Date(chJour-1, chMois, chAnnee);
         return veille;
     }
-
-
 
 
 

@@ -4,18 +4,15 @@ import java.util.Collection;
 import java.util.TreeSet;
 
 /** Class Description of CalendrierDuMois */
-public class CalendrierDuMois {
+public class CalendrierDuMois extends DateCalendrier{
 
     /**  Field Description of mois : le mois du calendrier */
-
     private int mois;
 
     /** Field Description annee : l'annee du calendrier */
     private int annee;
 
-    /**
-     * treeSetDate : la collection des dates du mois en cours
-     */
+    /** treeSetDate : la collection des dates du mois en cours */
     private Collection <DateCalendrier> treeSetDate;
 
     public CalendrierDuMois ( int mois, int annee) {
@@ -40,10 +37,7 @@ public class CalendrierDuMois {
         }
     }
 
-    /**
-     * accesseur sur le champ collection dates
-     * @return
-     */
+    /** accesseur sur le champ collection dates */
     public Collection <DateCalendrier> getDates() {
         return treeSetDate;
     }

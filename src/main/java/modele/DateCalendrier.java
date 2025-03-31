@@ -4,7 +4,7 @@ import constantes.ConstantesCalendrier;
 
 import java.util.Calendar;
 
-public class DateCalendrier extends Date implements ConstantesCalendrier {
+public class DateCalendrier extends Date implements ConstantesCalendrier, Comparable<Date> {
     private int chJourSemaine;
 
     public DateCalendrier() {
@@ -37,10 +37,16 @@ public class DateCalendrier extends Date implements ConstantesCalendrier {
             chJourSemaine = dayOfWeek-1;
     }
 
-    public DateCalendrier dateCalendrier() {
-        Date DateL = super.dateDuLendemain();
+    public DateCalendrier dateDuLendemain() {
+        Date date = super.dateDuLendemain();
 
-        return new DateCalendrier(DateL.chJour, DateL.chMois, DateL.chAnnee);
+        return new DateCalendrier(date.chJour, date.chMois, date.chAnnee);
+    }
+
+    public DateCalendrier dateDeLaVeille() {
+        Date date = super.dateDeLaVeille();
+
+        return new DateCalendrier(date.chJour, date.chMois, date.chAnnee);
     }
 
     public interface Comparable {
@@ -61,9 +67,8 @@ public class DateCalendrier extends Date implements ConstantesCalendrier {
         return chJourSemaine;
     }
 
-    public int getMois() {
-        return chMois;
-    }
+    public int getMois() { return chMois; }
+
 
 
     public String toString() {
